@@ -6,9 +6,16 @@ server.get("/", (req , res) => {
     res.json({name:"apple"})
 })
 
+server.use(express.json())
+
+server.post("/login", (req , res) => {
+    console.log(req.body)
+    res.status(200).json({name:"success"})
+})
 
 
 
-server.listen(3000, () =>{
+
+server.listen(5000, () =>{
     console.log(`server started on ${port}`)
 })
